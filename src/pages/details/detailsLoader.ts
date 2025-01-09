@@ -10,7 +10,7 @@ export interface DetailsLoaderResult {
     details: PackageDetails
 }
 
-export async function detailsLoader({params,}: LoaderArgs): Promise<DetailsLoaderResult> {
+export async function detailsLoader({params }: LoaderArgs): Promise<DetailsLoaderResult> {
     const { name } = params
 
     if (!name) {

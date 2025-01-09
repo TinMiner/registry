@@ -1,13 +1,10 @@
-import type { SearchLoaderResult } from "./searchLoader";
+import type { SearchLoaderResult } from "./searchLoader"
 import { useLoaderData } from "react-router-dom"
-import PackageListItem from "../../components/OldPackageListItem";
- 
+import PackageListItem from "../../components/PackageListItem"
+
 export default function SearchPage() {
     const { searchResults } = useLoaderData() as SearchLoaderResult
- 
-  if (!searchResults || searchResults.length === 0) {
-    return <div>No results found.</div>;
-  }
+
     const renderedResults = searchResults.map((result) => {
         return <PackageListItem pack={result} key={result.name} />
     })
